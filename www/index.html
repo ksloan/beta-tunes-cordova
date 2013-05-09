@@ -1,42 +1,155 @@
-<!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
+<!DOCTYPE html> 
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Hello World</title>
-    </head>
-    <body>
-        <div class="app">
-            <h1>PhoneGap</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
-        </div>
-        <script type="text/javascript" src="phonegap.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-        </script>
-    </body>
+<head>
+	<title>Beta Songbook</title>
+	<script src="phonegap.js"></script>
+	<script src="js/jquery-1.9.0.min.js" type="text/javascript"></script>
+	<script src="js/jqm131.min.js" type="text/javascript"></script>
+	<script src="js/songs.js"></script>
+	<link rel="stylesheet" href="css/jqm131.min.css" />
+	<link rel="stylesheet" href="css/custom.css" />
+	<!-- initialize website with right dimensions on mobile phones -->
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<link rel="apple-touch-icon-precomposed" href="images/icon.png" />
+	<script src="phonegap.js"></script>
+</head>
+
+<body>
+<!-- main page --> 
+<div data-role="page" id="main_page">
+	<div data-role="header" data-position="fixed" data-tap-toggle="false">
+		<h1>Beta Tunes<!--<img src="betatunes_small.png">--></h1>
+		<a href="#about_page" data-noicon class="ui-btn-right about-btn"></a>
+	</div>
+	
+	<div data-role="content">
+		<!-- <div id="dragons"><img src="images/singingdragons_small.png"></div> -->
+		<div>
+			<ul id="song_list" data-role="listview" data-filter="true" data-filter-placeholder="Search songs...">
+				<li data-song="AsBetasNowWeMeet"><a href="#">As Betas Now We Meet</a></li>
+				<li data-song="BeholdTheMysticSymbol"><a href="#">Behold The Mystic Symbol</a></li>
+				<li data-song="BetasEmblems"><a href="#">Beta's Emblems</a></li>
+				<li data-song="BetaDay"><a href="#">Beta Day</a></li>
+				<li data-song="BetaDoxolgy"><a href="#">Beta Doxolgy</a></li>
+				<li data-song="BetaHymn"><a href="#">Beta Hymn</a></li>
+				<li data-song="BetaLullaby"><a href="#">Beta Lullaby</a></li>
+				<li data-song="BetaPraise"><a href="#">Beta Praise</a></li>
+				<li data-song="BetaRose"><a href="#">Beta Rose</a></li>
+				<li data-song="BetaSweetheart"><a href="#">Beta Sweetheart</a></li>
+				<li data-song="CrewSong"><a href="#">Crew Song</a></li>
+				<li data-song="DrawTheMysticCircleround"><a href="#">Draw The Mystic Circle 'round</a></li>
+				<li data-song="ForTheStaunchest"><a href="#">For The Staunchest</a></li>
+				<li data-song="GemmaNostra"><a href="#">Gemma Nostra</a></li>
+				<li data-song="ITookMyGirlOutWalking"><a href="#">I Took My Girl Out Walking</a></li>
+				<li data-song="InAnOldFashionedGarden"><a href="#">In An Old Fashioned Garden</a></li>
+				<li data-song="InTheOldPorchChairs"><a href="#">In The Old Porch Chairs</a></li>
+				<li data-song="LetAllStandTogether"><a href="#">Let All Stand Together</a></li>
+				<li data-song="MarchingAlong"><a href="#">Marching Along</a></li>
+				<li data-song="MyBetaGirl"><a href="#">My Beta Girl</a></li>
+				<li data-song="MyBetaSweetheart"><a href="#">My Beta Sweetheart</a></li>
+				<li data-song="PartingSong"><a href="#">Parting Song</a></li>
+				<li data-song="SerenadeSong"><a href="#">Serenade Song</a></li>
+				<li data-song="SheWearsMyBetaPin"><a href="#">She Wears My Beta Pin</a></li>
+				<li data-song="SweetheartSong"><a href="#">Sweetheart Song</a></li>
+				<li data-song="TheAlumnisReturn"><a href="#">The Alumni's Return</a></li>
+				<li data-song="TheBanquetHall"><a href="#">The Banquet Hall</a></li>
+				<li data-song="TheBetaChorus"><a href="#">The Beta Chorus</a></li>
+				<li data-song="TheBetaGoodnight"><a href="#">The Beta Goodnight</a></li>
+				<li data-song="TheBetaMarseillaise"><a href="#">The Beta Marseillaise</a></li>
+				<li data-song="TheBetaPostscript"><a href="#">The Beta Postscript</a></li>
+				<li data-song="TheBetaShrine"><a href="#">The Beta Shrine</a></li>
+				<li data-song="TheBetaStars"><a href="#">The Beta Stars</a></li>
+				<li data-song="TheCrowSong"><a href="#">The Crow Song</a></li>
+				<li data-song="TheFroggieSong"><a href="#">The Froggie Song</a></li>
+				<li data-song="TheJollyGreeks"><a href="#">The Jolly Greeks</a></li>
+				<li data-song="TheLovingCup"><a href="#">The Loving Cup</a></li>
+				<li data-song="TheSonsOfTheDragon"><a href="#">The Sons Of The Dragon</a></li>
+				<li data-song="TheresAScene"><a href="#">There's A Scene</a></li>
+				<li data-song="TiDeiDeO"><a href="#">Ti-De-i-De-O</a></li>
+				<li data-song="ToThePledge"><a href="#">To The Pledge</a></li>
+				<li data-song="WeAreThePeople"><a href="#">We Are The People</a></li>
+				<li data-song="WeGatherAgain"><a href="#">We Gather Again</a></li>
+				<li data-song="WooglinForever"><a href="#">Wooglin Forever!</a></li>
+				<li data-song="WooglinGivesUsTheReasonWhy"><a href="#">Wooglin Gives Us The Reason Why</a></li>
+				<li data-song="WooglinToThePledge"><a href="#">Wooglin To The Pledge</a></li>
+				<li data-song="YoureTheGirlOfABetasDreams"><a href="#">You're The Girl Of A Beta's Dreams</a></li>
+			</ul>
+		</div>
+	</div>
+	<div data-role="footer"><h1>Songs of the Beta Theta Pi Fraternity</h1></div>
+</div>
+
+<!-- song page -->
+<div data-role="page" id="song_page">
+	<div data-role="header" data-position="fixed" data-tap-toggle="false">
+		<a href="#main_page" data-rel="back" class="back-btn" data-direction="reverse"></a>
+		<h1>Beta Tunes</h1> 
+	</div>
+	<div data-role="content">
+		<div id="streamer">
+			<audio controls preload="none" src="http://www.alphaofbetathetapi.com/songs/Beta-Day.mp3">
+				Your browser does not support the audio element.
+			</audio>
+		</div>
+		<div id="stream_btn">
+			<a href="#">Listen</a>
+		</div>
+		<div id="lyrics"></div>
+	</div>
+</div>
+
+<!-- about page -->
+<div data-role="page" id="about_page">
+	<div data-role="header" data-position="fixed" data-tap-toggle="false">
+		<a href="#main_page" data-rel="back" class="back-btn" data-direction="reverse"></a>
+		<h1>About</h1>
+	</div>
+	<div data-role="content">
+		<p>This app was developed by Kevin Sloan, Toronto 2013. Please share this app with your brothers and keep the singing fraternity's songs in your pocket at all times!</p>
+		<p>Song lyrics were taken from the 2005 revision of the Beta Tunes Songbook. Special Thanks to the <a href="http://www.alphaofbetathetapi.com">Alpha Chapter</a> for hosting the MP3s. </p>
+		<p>If you have feedback, comments, or revisions please contact me through <a href="http://www.ksloan.net">my website</a> or by <a href="mailto:sloankev@gmail.com">email</a>.</p>
+		<br>
+		<p><b>NOTE: Listening to songs streams data over your wifi or cellular network.</b></p>
+		<div id="btpimg">
+			<a href="http://betathetapi.org"><img src="images/btp.png"></a>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+
+	//load a song when clicked
+	$("#main_page #song_list li").on("click", function() {
+		var songName = $(this).attr('data-song');
+		//$("#song_page h1").html($(this).children());
+		$("#song_page #lyrics").html(songs[songName]);
+		$("#streamer").css("display", "none");
+		$("#song_page audio")[0].pause();
+		
+		if (mp3s[songName]) {
+			$("#stream_btn").css("display", "block");
+			$("#song_page audio").attr("src", mp3s[songName]);
+		} else {
+			$("#stream_btn").css("display", "none");
+		}
+		
+		$.mobile.changePage("#song_page");
+		return false;
+	});
+	
+	// play songs when stream_btn is clicked
+	$("#stream_btn").on("click, tap", function () {
+		$("#streamer").slideDown();
+		$("#song_page audio")[0].play();
+		return false;
+	});
+	
+	// stop the music when song page is left
+	$("#song_page").on("pagehide", function () {
+		$("#song_page audio")[0].pause();
+	});
+	
+</script>
+</body>
 </html>
