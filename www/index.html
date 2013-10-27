@@ -2,17 +2,15 @@
 <html>
 <head>
 	<title>Beta Songbook</title>
-	<script src="phonegap.js"></script>
-	<script src="js/jquery-1.9.0.min.js" type="text/javascript"></script>
-	<script src="js/jqm131.min.js" type="text/javascript"></script>
-	<script src="js/songs.js"></script>
 	<link rel="stylesheet" href="css/jqm131.min.css" />
 	<link rel="stylesheet" href="css/custom.css" />
+	<script src="js/jquery-1.9.0.min.js" type="text/javascript"></script>
+	<script src="js/jqm131.min.js" type="text/javascript"></script>
 	<!-- initialize website with right dimensions on mobile phones -->
 	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<link rel="apple-touch-icon-precomposed" href="images/icon.png" />
-	<script src="phonegap.js"></script>
+	<!-- <script src="phonegap.js"></script> -->
 </head>
 
 <body>
@@ -88,7 +86,8 @@
 	</div>
 	<div data-role="content">
 		<div id="streamer">
-			<audio controls preload="none" src="http://www.alphaofbetathetapi.com/songs/Beta-Day.mp3">
+			<audio controls preload="none">
+				<source src="http://www.alphaofbetathetapi.com/songs/Beta-Day.mp3" type="audio/mpeg">
 				Your browser does not support the audio element.
 			</audio>
 		</div>
@@ -106,18 +105,23 @@
 		<h1>About</h1>
 	</div>
 	<div data-role="content">
-		<p>This app was developed by Kevin Sloan, Toronto 2013. Please share this app with your brothers and keep the singing fraternity's songs in your pocket at all times!</p>
-		<p>Song lyrics were taken from the 2005 revision of the Beta Tunes Songbook. Special Thanks to the <a href="http://www.alphaofbetathetapi.com">Alpha Chapter</a> for hosting the MP3s. </p>
-		<p>If you have feedback, comments, or revisions please contact me through <a href="http://www.ksloan.net">my website</a> or by <a href="mailto:sloankev@gmail.com">email</a>.</p>
-		<br>
+		<p>Please share this app with your brothers and keep the singing fraternity's songs in your pocket at all times!</p>
+		<p>Song lyrics were taken from the 2005 revision of the Beta Tunes Songbook. Thanks to the <a href="http://www.alphaofbetathetapi.com">Alpha Chapter</a> for hosting the MP3s. </p>
 		<p><b>NOTE: Listening to songs streams data over your wifi or cellular network.</b></p>
+		<p>If you have feedback, comments, or revisions please <a href="mailto:sloankev@gmail.com">email me.</a> - <a href="http://www.ksloan.net">Kevin Sloan</a>, Toronto 2013. </p>
 		<div id="btpimg">
 			<a href="http://betathetapi.org"><img src="images/btp.png"></a>
 		</div>
 	</div>
 </div>
 
+
+<script src="js/songs.js"></script>
 <script type="text/javascript">
+
+$( document ).ready(function() {
+
+	$.mobile.defaultPageTransition = 'none';
 
 	//load a song when clicked
 	$("#main_page #song_list li").on("click", function() {
@@ -127,21 +131,25 @@
 		$("#streamer").css("display", "none");
 		$("#song_page audio")[0].pause();
 		
+		$.mobile.changePage("#song_page");
+		
 		if (mp3s[songName]) {
 			$("#stream_btn").css("display", "block");
-			$("#song_page audio").attr("src", mp3s[songName]);
+			$("#streamer").html('<audio controls preload="none"> \
+			<source src="'+mp3s[songName]+'" type="audio/mpeg"> \
+				Your browser does not support the audio element. \
+			</audio>');
+			$("#song_page audio")[0].load();
 		} else {
 			$("#stream_btn").css("display", "none");
 		}
-		
-		$.mobile.changePage("#song_page");
+
 		return false;
 	});
 	
-	// play songs when stream_btn is clicked
+	// show player when stream_btn is clicked
 	$("#stream_btn").on("click, tap", function () {
 		$("#streamer").slideDown();
-		$("#song_page audio")[0].play();
 		return false;
 	});
 	
@@ -149,6 +157,9 @@
 	$("#song_page").on("pagehide", function () {
 		$("#song_page audio")[0].pause();
 	});
+	
+
+});
 	
 </script>
 </body>
