@@ -2,76 +2,87 @@
 <html>
 <head>
 	<title>Beta Songbook</title>
+	<link href="css/fontawesome.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/jqm131.min.css" />
 	<link rel="stylesheet" href="css/custom.css" />
 	<script src="js/jquery-1.9.0.min.js" type="text/javascript"></script>
 	<script src="js/jqm131.min.js" type="text/javascript"></script>
 	<!-- initialize website with right dimensions on mobile phones -->
-	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;" />
-	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<link rel="apple-touch-icon-precomposed" href="images/icon.png" />
-	<!-- <script src="phonegap.js"></script> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-title" content="Beta Tunes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="apple-touch-startup-image" href="images/iphone_portrait.png">
+	<link rel="apple-touch-icon" href="images/icon.png">
+	
+	<script type='application/javascript' src='js/fastclick.js'></script>
+	<script>
+		window.addEventListener('load', function() {
+			FastClick.attach(document.body);
+		}, false);
+	</script>
+	
 </head>
 
 <body>
 <!-- main page --> 
 <div data-role="page" id="main_page">
-	<div data-role="header" data-position="fixed" data-tap-toggle="false">
+	<div class="header" data-role="header" data-position="fixed" data-tap-toggle="false">
 		<h1>Beta Tunes<!--<img src="betatunes_small.png">--></h1>
-		<a href="#about_page" data-noicon class="ui-btn-right about-btn"></a>
+		<a href="#about_page" class="ui-btn-right ios-button"><i class="fa fa-info"></i></a>
 	</div>
 	
 	<div data-role="content">
 		<!-- <div id="dragons"><img src="images/singingdragons_small.png"></div> -->
 		<div>
 			<ul id="song_list" data-role="listview" data-filter="true" data-filter-placeholder="Search songs...">
-				<li data-song="AsBetasNowWeMeet"><a href="#">As Betas Now We Meet</a></li>
-				<li data-song="BeholdTheMysticSymbol"><a href="#">Behold The Mystic Symbol</a></li>
-				<li data-song="BetasEmblems"><a href="#">Beta's Emblems</a></li>
-				<li data-song="BetaDay"><a href="#">Beta Day</a></li>
-				<li data-song="BetaDoxolgy"><a href="#">Beta Doxolgy</a></li>
-				<li data-song="BetaHymn"><a href="#">Beta Hymn</a></li>
-				<li data-song="BetaLullaby"><a href="#">Beta Lullaby</a></li>
-				<li data-song="BetaPraise"><a href="#">Beta Praise</a></li>
-				<li data-song="BetaRose"><a href="#">Beta Rose</a></li>
-				<li data-song="BetaSweetheart"><a href="#">Beta Sweetheart</a></li>
-				<li data-song="CrewSong"><a href="#">Crew Song</a></li>
-				<li data-song="DrawTheMysticCircleround"><a href="#">Draw The Mystic Circle 'round</a></li>
-				<li data-song="ForTheStaunchest"><a href="#">For The Staunchest</a></li>
-				<li data-song="GemmaNostra"><a href="#">Gemma Nostra</a></li>
-				<li data-song="ITookMyGirlOutWalking"><a href="#">I Took My Girl Out Walking</a></li>
-				<li data-song="InAnOldFashionedGarden"><a href="#">In An Old Fashioned Garden</a></li>
-				<li data-song="InTheOldPorchChairs"><a href="#">In The Old Porch Chairs</a></li>
-				<li data-song="LetAllStandTogether"><a href="#">Let All Stand Together</a></li>
-				<li data-song="MarchingAlong"><a href="#">Marching Along</a></li>
-				<li data-song="MyBetaGirl"><a href="#">My Beta Girl</a></li>
-				<li data-song="MyBetaSweetheart"><a href="#">My Beta Sweetheart</a></li>
-				<li data-song="PartingSong"><a href="#">Parting Song</a></li>
-				<li data-song="SerenadeSong"><a href="#">Serenade Song</a></li>
-				<li data-song="SheWearsMyBetaPin"><a href="#">She Wears My Beta Pin</a></li>
-				<li data-song="SweetheartSong"><a href="#">Sweetheart Song</a></li>
-				<li data-song="TheAlumnisReturn"><a href="#">The Alumni's Return</a></li>
-				<li data-song="TheBanquetHall"><a href="#">The Banquet Hall</a></li>
-				<li data-song="TheBetaChorus"><a href="#">The Beta Chorus</a></li>
-				<li data-song="TheBetaGoodnight"><a href="#">The Beta Goodnight</a></li>
-				<li data-song="TheBetaMarseillaise"><a href="#">The Beta Marseillaise</a></li>
-				<li data-song="TheBetaPostscript"><a href="#">The Beta Postscript</a></li>
-				<li data-song="TheBetaShrine"><a href="#">The Beta Shrine</a></li>
-				<li data-song="TheBetaStars"><a href="#">The Beta Stars</a></li>
-				<li data-song="TheCrowSong"><a href="#">The Crow Song</a></li>
-				<li data-song="TheFroggieSong"><a href="#">The Froggie Song</a></li>
-				<li data-song="TheJollyGreeks"><a href="#">The Jolly Greeks</a></li>
-				<li data-song="TheLovingCup"><a href="#">The Loving Cup</a></li>
-				<li data-song="TheSonsOfTheDragon"><a href="#">The Sons Of The Dragon</a></li>
-				<li data-song="TheresAScene"><a href="#">There's A Scene</a></li>
-				<li data-song="TiDeiDeO"><a href="#">Ti-De-i-De-O</a></li>
-				<li data-song="ToThePledge"><a href="#">To The Pledge</a></li>
-				<li data-song="WeAreThePeople"><a href="#">We Are The People</a></li>
-				<li data-song="WeGatherAgain"><a href="#">We Gather Again</a></li>
-				<li data-song="WooglinForever"><a href="#">Wooglin Forever!</a></li>
-				<li data-song="WooglinGivesUsTheReasonWhy"><a href="#">Wooglin Gives Us The Reason Why</a></li>
-				<li data-song="WooglinToThePledge"><a href="#">Wooglin To The Pledge</a></li>
-				<li data-song="YoureTheGirlOfABetasDreams"><a href="#">You're The Girl Of A Beta's Dreams</a></li>
+				<li data-icon="false" data-song="AsBetasNowWeMeet"><a href="#">As Betas Now We Meet</a></li>
+				<li data-icon="false" data-song="BeholdTheMysticSymbol"><a href="#">Behold The Mystic Symbol</a></li>
+				<li data-icon="false" data-song="BetasEmblems"><a href="#">Beta's Emblems</a></li>
+				<li data-icon="false" data-song="BetaDay"><a href="#">Beta Day</a></li>
+				<li data-icon="false" data-song="BetaDoxolgy"><a href="#">Beta Doxolgy</a></li>
+				<li data-icon="false" data-song="BetaHymn"><a href="#">Beta Hymn</a></li>
+				<li data-icon="false" data-song="BetaLullaby"><a href="#">Beta Lullaby</a></li>
+				<li data-icon="false" data-song="BetaPraise"><a href="#">Beta Praise</a></li>
+				<li data-icon="false" data-song="BetaRose"><a href="#">Beta Rose</a></li>
+				<li data-icon="false" data-song="BetaSweetheart"><a href="#">Beta Sweetheart</a></li>
+				<li data-icon="false" data-song="CrewSong"><a href="#">Crew Song</a></li>
+				<li data-icon="false" data-song="DrawTheMysticCircleround"><a href="#">Draw The Mystic Circle 'round</a></li>
+				<li data-icon="false" data-song="ForTheStaunchest"><a href="#">For The Staunchest</a></li>
+				<li data-icon="false" data-song="GemmaNostra"><a href="#">Gemma Nostra</a></li>
+				<li data-icon="false" data-song="ITookMyGirlOutWalking"><a href="#">I Took My Girl Out Walking</a></li>
+				<li data-icon="false" data-song="InAnOldFashionedGarden"><a href="#">In An Old Fashioned Garden</a></li>
+				<li data-icon="false" data-song="InTheOldPorchChairs"><a href="#">In The Old Porch Chairs</a></li>
+				<li data-icon="false" data-song="LetAllStandTogether"><a href="#">Let All Stand Together</a></li>
+				<li data-icon="false" data-song="MarchingAlong"><a href="#">Marching Along</a></li>
+				<li data-icon="false" data-song="MyBetaGirl"><a href="#">My Beta Girl</a></li>
+				<li data-icon="false" data-song="MyBetaSweetheart"><a href="#">My Beta Sweetheart</a></li>
+				<li data-icon="false" data-song="PartingSong"><a href="#">Parting Song</a></li>
+				<li data-icon="false" data-song="SerenadeSong"><a href="#">Serenade Song</a></li>
+				<li data-icon="false" data-song="SheWearsMyBetaPin"><a href="#">She Wears My Beta Pin</a></li>
+				<li data-icon="false" data-song="SweetheartSong"><a href="#">Sweetheart Song</a></li>
+				<li data-icon="false" data-song="TheAlumnisReturn"><a href="#">The Alumni's Return</a></li>
+				<li data-icon="false" data-song="TheBanquetHall"><a href="#">The Banquet Hall</a></li>
+				<li data-icon="false" data-song="TheBetaChorus"><a href="#">The Beta Chorus</a></li>
+				<li data-icon="false" data-song="TheBetaGoodnight"><a href="#">The Beta Goodnight</a></li>
+				<li data-icon="false" data-song="TheBetaMarseillaise"><a href="#">The Beta Marseillaise</a></li>
+				<li data-icon="false" data-song="TheBetaPostscript"><a href="#">The Beta Postscript</a></li>
+				<li data-icon="false" data-song="TheBetaShrine"><a href="#">The Beta Shrine</a></li>
+				<li data-icon="false" data-song="TheBetaStars"><a href="#">The Beta Stars</a></li>
+				<li data-icon="false" data-song="TheCrowSong"><a href="#">The Crow Song</a></li>
+				<li data-icon="false" data-song="TheFroggieSong"><a href="#">The Froggie Song</a></li>
+				<li data-icon="false" data-song="TheJollyGreeks"><a href="#">The Jolly Greeks</a></li>
+				<li data-icon="false" data-song="TheLovingCup"><a href="#">The Loving Cup</a></li>
+				<li data-icon="false" data-song="TheSonsOfTheDragon"><a href="#">The Sons Of The Dragon</a></li>
+				<li data-icon="false" data-song="TheresAScene"><a href="#">There's A Scene</a></li>
+				<li data-icon="false" data-song="TiDeiDeO"><a href="#">Ti-De-i-De-O</a></li>
+				<li data-icon="false" data-song="ToThePledge"><a href="#">To The Pledge</a></li>
+				<li data-icon="false" data-song="WeAreThePeople"><a href="#">We Are The People</a></li>
+				<li data-icon="false" data-song="WeGatherAgain"><a href="#">We Gather Again</a></li>
+				<li data-icon="false" data-song="WooglinForever"><a href="#">Wooglin Forever!</a></li>
+				<li data-icon="false" data-song="WooglinGivesUsTheReasonWhy"><a href="#">Wooglin Gives Us The Reason Why</a></li>
+				<li data-icon="false" data-song="WooglinToThePledge"><a href="#">Wooglin To The Pledge</a></li>
+				<li data-icon="false" data-song="YoureTheGirlOfABetasDreams"><a href="#">You're The Girl Of A Beta's Dreams</a></li>
 			</ul>
 		</div>
 	</div>
@@ -81,8 +92,9 @@
 <!-- song page -->
 <div data-role="page" id="song_page">
 	<div data-role="header" data-position="fixed" data-tap-toggle="false">
-		<a href="#main_page" data-rel="back" class="back-btn" data-direction="reverse"></a>
+		<a href="#main_page" data-rel="back" class="ios-back-btn" data-direction="reverse"><i class="fa fa-chevron-left"></i> Songs</a>
 		<h1>Beta Tunes</h1> 
+		<a href="#" class="ios-button" id="stream_btn">Listen</a>
 	</div>
 	<div data-role="content">
 		<div id="streamer">
@@ -91,9 +103,11 @@
 				Your browser does not support the audio element.
 			</audio>
 		</div>
+<!-- 
 		<div id="stream_btn">
 			<a href="#">Listen</a>
 		</div>
+ -->
 		<div id="lyrics"></div>
 	</div>
 </div>
@@ -101,14 +115,14 @@
 <!-- about page -->
 <div data-role="page" id="about_page">
 	<div data-role="header" data-position="fixed" data-tap-toggle="false">
-		<a href="#main_page" data-rel="back" class="back-btn" data-direction="reverse"></a>
+		<a href="#main_page" data-rel="back" class="ios-back-btn" data-direction="reverse"><i class="fa fa-chevron-left"></i> Songs</a>
 		<h1>About</h1>
 	</div>
 	<div data-role="content">
-		<p>Please share this app with your brothers and keep the singing fraternity's songs in your pocket at all times!</p>
-		<p>Song lyrics were taken from the 2005 revision of the Beta Tunes Songbook. Thanks to the <a href="http://www.alphaofbetathetapi.com">Alpha Chapter</a> for hosting the MP3s. </p>
+		<p style="margin-top: 0px;">Please share this app with your brothers and keep the singing fraternity's songs in your pocket at all times!</p>
+		<p>Song lyrics were taken from the 2005 revision of the Beta Tunes Songbook. Thanks to the <a target="_blank" href="http://www.alphaofbetathetapi.com">Alpha Chapter</a> for hosting the MP3s. </p>
 		<p><b>NOTE: Listening to songs streams data over your wifi or cellular network.</b></p>
-		<p>If you have feedback, comments, or revisions please <a href="mailto:sloankev@gmail.com">email me.</a> - <a href="http://www.ksloan.net">Kevin Sloan</a>, Toronto 2013. </p>
+		<p>If you have feedback, comments, or revisions please email me at sloankev@gmail.com - <a target="_blank" href="http://www.ksloan.net">Kevin Sloan</a>, Toronto 2013. </p>
 		<div id="btpimg">
 			<a href="http://betathetapi.org"><img src="images/btp.png"></a>
 		</div>
@@ -157,7 +171,6 @@ $( document ).ready(function() {
 	$("#song_page").on("pagehide", function () {
 		$("#song_page audio")[0].pause();
 	});
-	
 
 });
 	

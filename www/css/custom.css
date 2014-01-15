@@ -45,10 +45,24 @@
 	margin: auto;
 }
 
-#btpimg {
-/* 	margin-top: 50px; */
-}
 
+/* Styling for iOS7 */
+* {
+	font-family: -apple-system-font; 
+}
+.ui-header {
+/* 	background: #34AADC; */
+	background: #0086b6;
+/* 	padding-top: 20px; */
+/* 
+	 background: -webkit-gradient(linear, left top, left bottom, from(
+        rgba(29, 120, 239, 1)), to(rgba(129, 243, 253, 0.88)))
+ */
+}
+.ui-title {
+	color: #FFF;
+}
+/* End Styling for iOS7 */
 
 /* remove blue glow */
 .ui-focus,
@@ -64,7 +78,7 @@
 	-moz-box-shadow: none;
   	-webkit-box-shadow: none;
   	box-shadow: none ;
-  	border: 1px solid #992013;
+/*   	border: 1px solid #992013; */
 }
 
 .ui-input-text, .ui-input-search {
@@ -74,24 +88,35 @@
 	background-position: 3px center; 
 }
 
+.ui-input-text, .ui-input-search {
+    content: "\f002"; 
+    font-family: FontAwesome;
+}
+
 .ui-input-clear {
 	background: url("images/close.png");
 	width: 25px;
 	height: 25px;
 }
 
+/* 
 .ui-bar-a {
 	background: #34495E;
 	color: #ECF0F1;
 }
+ */
 
 .ui-footer {
 	padding: 1px 0px;
+	color: #000;
+	background: #0086b6;
 }
+/* 
 
 body {
   font: 14px/1.231 "Helvetica", sans-serif;
 }
+ */
 
 /*
 #main_page h1 {
@@ -101,17 +126,23 @@ body {
 */
 
 #main_page #song_list li {
-	border-top: solid 1px #EEEEEE;
+/* 	border-top: solid 1px #EEEEEE; */
+	/* 1px hairline, using a GIF  */
+	background: repeat-x bottom left 
+	  url(data:image/gif;base64,R0lGODlhAQACAPABAMjHzP///yH/C1hNUCBEYXRhWE1QAz94cAAh+QQFAAABACwAAAAAAQACAAACAgwKADs=);
+	background-size: 100% 1px;
 }
 
-#main_page #song_list li a{
+#main_page #song_list li a {
 	text-align: center;
+/* 	width: 100%; */
 	text-decoration: none;
 	color: #34495e;
 }
 
-#main_page #song_list li a:active{
-	color: #2980B9;
+#main_page #song_list li a:active {
+/* 	color: #2980B9; */
+	color: #0086b6;
 }
 
 #song_page .ui-content {
@@ -119,9 +150,9 @@ body {
 }
 
 #lyrics {
-	margin: auto;
-	padding: 10px;
-	padding-top: 20px;
+/* 	margin: auto; */
+/* 	padding: 10px; */
+/* 	padding-top: 20px; */
 }
 
 #lyrics div {
@@ -135,19 +166,24 @@ body {
 
 #lyrics h1 {
 	text-align: center;
+	font: -apple-system-headline;
 }
 
 #lyrics h2 {
-	font-style: italic;
-	font-size: 10pt;
+/* 	font-style: italic; */
+/* 	font-size: 10pt; */
+	font: -apple-system-subheadline;
 	text-align: center;
 }
 
 #lyrics h3 {
+/* 
 	font-size: 10pt;
-	text-align: center;
 	font-weight: normal;
+ */
+	font: -apple-system-body;
 	color: grey;
+	text-align: center;
 }
 
 #lyrics h4:first-of-type {
@@ -158,6 +194,7 @@ body {
 	width: 100px;
 	margin: auto;
 }
+/* 
 
 #stream_btn {
 	width: 30%;
@@ -175,10 +212,12 @@ body {
 	font-weight: bold;
 	color: #EEEEEE;
 }
+ */
 
 #streamer {
 /* 	margin: 10px 0px 10px 0; */
-	background-color: #1ABC9C;
+/* 	background-color: #1ABC9C; */
+margin-top:12px;
 }
 
 audio {
@@ -186,11 +225,38 @@ audio {
 	width: 100%;
 }
 
-.back-btn {
-	background: url("images/back.png");
-	width: 32px;
-	height: 32px;
+.ios-back-btn {
+	height: 30px;
+/* 	top: 6px !important; */
+/* 	top: 22px !important; */
+	text-decoration: none;
+	color: #FFFFFF;
 }
+.ios-back-btn .ui-btn-inner {
+	overflow: visible;
+}
+
+.ios-back-btn .ui-btn-text {
+	font: -apple-system-font;
+	position: absolute;
+	left: 3px;
+	top: 6px;
+	font-size: 17px;
+}
+
+.ios-button {
+	text-decoration: none;
+	color: #FFFFFF;
+	height: 30px;
+/* 	top: 22px !important; */
+/* 	top: 6px !important; */
+}
+
+.ios-button .ui-btn-text {
+	font: -apple-system-font;
+	font-size: 17px;
+}
+/* 
 
 .about-btn {
 	background: url("images/info.png");
@@ -201,3 +267,4 @@ audio {
 #about_page p {
 	text-align: justify;
 }
+ */
