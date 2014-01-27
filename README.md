@@ -1,50 +1,5 @@
-# PhoneGap Build Starter Application
+Beta Tunes is a comprehensive collection of songs of the Beta Theta Pi fraternity including lyrics and audio streams. Beta Tunes includes over 45 songs, 35 of which you can listen to. Keep the singing fraternity’s songs in your pocket at all times!
 
-> A Hello World application to get started with PhoneGap Build.
+[iOS](https://itunes.apple.com/us/app/beta-tunes-beta-theta-pi/id797836059?mt=8&uo=4) / [Android](https://play.google.com/store/apps/details?id=com.phonegap.betaTunes)
 
-## Usage
-
-### Run Application
-
-    /www/index.html
-
-### Run Tests
-
-    /www/spec.html
-
-### PhoneGap/Build
-
-Create a new app with the following repository:
-
-    https://github.com/phonegap/phonegap-start.git
-
-## Updating the Application
-
-The application is based on the [Apache Cordova Hello World][cordova-app] app.
-
-### 1. Update the Source
-
-    cp cordova-app-hello-world/www www/
-
-__Do not replace `www/config.xml`.__
-
-__Do not replace `www/img/logo.png`.__
-
-### 2. Update index.html
-
-Replace `<h1>Apache Cordova</h1>` with `<h1>PhoneGap</h1>`.
-
-### 3. Update PhoneGap Version
-
-    <preference name="phonegap-version" value="x.x.x" />
-
-### 4. Commit
-
-    $ git commit -am "Version x.x.x"
-
-### 5. Tag
-
-    $ git tag x.x.x
-
-[cordova-app]: http://github.com/apache/cordova-app-hello-world
 
