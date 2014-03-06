@@ -21,6 +21,11 @@
 			FastClick.attach(document.body);
 		}, false);
 	</script>
+
+	<script type='application/javascript' src='js/iscroll-lite.js'></script>
+	<script type="text/javascript">
+		var myScroll = new IScroll('#songs');
+	</script>
 	
 </head>
 
@@ -34,7 +39,7 @@
 	
 	<div data-role="content">
 		<!-- <div id="dragons"><img src="images/singingdragons_small.png"></div> -->
-		<div>
+		<div id="#songs">
 			<ul id="song_list" data-role="listview" data-filter="true" data-filter-placeholder="Search songs...">
 				<li data-icon="false" data-song="AsBetasNowWeMeet"><a href="#">As Betas Now We Meet</a></li>
 				<li data-icon="false" data-song="BeholdTheMysticSymbol"><a href="#">Behold The Mystic Symbol</a></li>
@@ -122,7 +127,7 @@
 		<p style="margin-top: 0px;">Please share this app with your brothers and keep the singing fraternity's songs in your pocket at all times!</p>
 		<p>Song lyrics were taken from the 2005 revision of the Beta Tunes Songbook.</p>
 		<p><b>NOTE: Listening to songs streams data over your wifi or cellular network.</b></p>
-		<p>If you have feedback, comments, or revisions please email me at sloankev@gmail.com - <a target="_blank" href="http://www.ksloan.net">Kevin Sloan</a>, Toronto 2013.</p>
+		<p>If you have feedback, comments, or revisions please contact me through my website (<a id="siteLink" href="http://www.ksloan.net">ksloan.net</a>) - Kevin Sloan, Toronto 2013.</p>
 		<div id="btpimg">
 			<a href="http://betathetapi.org"><img src="images/btp.png"></a>
 		</div>
@@ -170,6 +175,12 @@ $( document ).ready(function() {
 	// stop the music when song page is left
 	$("#song_page").on("pagehide", function () {
 		$("#song_page audio")[0].pause();
+	});
+
+	// open link to my site in safari
+	$('#siteLink').on('click', function (e) {
+		e.preventDefault();
+		window.open("http://ksloan.net", "_system");
 	});
 
 });
