@@ -122,7 +122,8 @@
 		<p style="margin-top: 0px;">Please share this app with your brothers and keep the singing fraternity's songs in your pocket at all times!</p>
 		<p>Song lyrics were taken from the 2005 revision of the Beta Tunes Songbook.</p>
 		<p><b>NOTE: Listening to songs streams data over your wifi or cellular network.</b></p>
-		<p>If you have feedback, comments, or revisions please contact me through my website (<a id="siteLink" href="http://www.ksloan.net">ksloan.net</a>) - Kevin Sloan, Toronto 2013.</p>
+		<p>If you have feedback, comments, or revisions please contact me through my website (<a onclick="window.open('http://ksloan.net', '_system');">ksloan.net</a>) - Kevin Sloan, Toronto 2013.</p>
+		
 		<div id="btpimg">
 			<a href="http://betathetapi.org"><img src="images/btp.png"></a>
 		</div>
@@ -170,12 +171,6 @@ $( document ).ready(function() {
 	// stop the music when song page is left
 	$("#song_page").on("pagehide", function () {
 		$("#song_page audio")[0].pause();
-	});
-
-	// open link to my site in safari
-	$('#siteLink').on('click', function (e) {
-		e.preventDefault();
-		window.open("http://ksloan.net","_system","location=yes");
 	});
 
 });
